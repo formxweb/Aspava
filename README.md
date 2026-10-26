@@ -44,10 +44,10 @@ Tüm içerik `src/data/` altındadır; bileşenlere dokunmadan güncellenebilir.
 
 ## Doğrulanması gereken bilgiler
 
-Kaynağı teyit edilemeyen her bilgi sitede sarı **"Doğrulanmalı"** etiketiyle görünür
-(üzerine gelince kaynağı yazar). Bilgi teyit edildiğinde `src/data/branches.ts` veya
-`src/data/menu.ts` içindeki ilgili `check` alanını silmeniz yeterlidir.
-Tüm etiketleri yayında gizlemek için derlemeden önce `NEXT_PUBLIC_HIDE_CHECKS=1` tanımlayın.
+Kaynağı teyit edilemeyen her bilginin notu `src/data/branches.ts` ve `src/data/menu.ts`
+içindeki `check` alanında durur; sitede görünmez. Bilgi teyit edildiğinde ilgili `check`
+alanını silmeniz yeterlidir. Notları sitede sarı **"Doğrulanmalı"** etiketiyle görmek için
+derlemeden önce `NEXT_PUBLIC_SHOW_CHECKS=1` tanımlayın (ör. `NEXT_PUBLIC_SHOW_CHECKS=1 npm run dev`).
 
 | Bilgi | Kaynak | Durum |
 | --- | --- | --- |

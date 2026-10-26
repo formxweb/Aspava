@@ -1,9 +1,9 @@
 import type { MediaId } from "./media";
 
-// Doğrulama işaretleri: `check` alanı dolu olan her bilgi sitede "Doğrulanmalı"
-// etiketiyle gösterilir. Bilgi teyit edildiğinde `check` alanını silmeniz yeterli.
-// Tüm etiketleri bir anda gizlemek için: NEXT_PUBLIC_HIDE_CHECKS=1
-export const SHOW_CHECKS = process.env.NEXT_PUBLIC_HIDE_CHECKS !== "1";
+// Doğrulama notları: `check` alanı dolu olan bilgiler henüz teyit edilmemiştir.
+// Notlar sitede gizlidir; bilgi teyit edildiğinde `check` alanını silmeniz yeterli.
+// Notları sitede "Doğrulanmalı" etiketiyle görmek için: NEXT_PUBLIC_SHOW_CHECKS=1
+export const SHOW_CHECKS = process.env.NEXT_PUBLIC_SHOW_CHECKS === "1";
 
 export type Checked<T> = { value: T; check?: string };
 
