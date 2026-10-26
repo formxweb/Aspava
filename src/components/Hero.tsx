@@ -197,17 +197,17 @@ export function Hero() {
           >
             <a
               href="#menu"
-              className="group inline-flex h-12 items-center gap-3 rounded-full bg-brand pr-4 pl-5 text-[0.875rem] font-semibold whitespace-nowrap shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-colors duration-300 hover:bg-brand-deep sm:h-14 sm:pr-5 sm:pl-7 sm:text-[0.95rem]"
+              className="group inline-flex h-11 items-center gap-3 rounded-full bg-brand px-4 text-[0.8125rem] font-semibold whitespace-nowrap shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-colors duration-300 hover:bg-brand-deep min-[400px]:h-12 min-[400px]:pl-5 min-[400px]:text-[0.875rem] sm:h-14 sm:pr-5 sm:pl-7 sm:text-[0.95rem]"
             >
               Menüyü İncele
-              <ArrowRight size={16} className="transition-transform duration-500 ease-out-expo group-hover:translate-x-1" />
+              <ArrowRight size={16} className="hidden transition-transform duration-500 ease-out-expo group-hover:translate-x-1 min-[400px]:block" />
             </a>
             <a
               href="#subeler"
-              className="group inline-flex h-12 items-center gap-3 rounded-full bg-white pr-4 pl-5 text-[0.875rem] font-semibold whitespace-nowrap text-ink shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-colors duration-300 hover:bg-paper sm:h-14 sm:pr-5 sm:pl-7 sm:text-[0.95rem]"
+              className="group inline-flex h-11 items-center gap-3 rounded-full bg-white px-4 text-[0.8125rem] font-semibold whitespace-nowrap text-ink shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-colors duration-300 hover:bg-paper min-[400px]:h-12 min-[400px]:pl-5 min-[400px]:text-[0.875rem] sm:h-14 sm:pr-5 sm:pl-7 sm:text-[0.95rem]"
             >
               Şubelerimizi Keşfet
-              <ArrowRight size={16} className="text-brand transition-transform duration-500 ease-out-expo group-hover:translate-x-1" />
+              <ArrowRight size={16} className="hidden text-brand transition-transform duration-500 ease-out-expo group-hover:translate-x-1 min-[400px]:block" />
             </a>
           </div>
         </div>

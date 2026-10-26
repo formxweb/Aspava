@@ -18,7 +18,7 @@ const columns: Column[] = [
   {
     letter: "A",
     word: "Allah",
-    text: "Aspava adını bu duanın baş harflerinden alır. Başkent Aspava'da her sofra aynı dilekle kurulur: misafir doysun, bereket eksik olmasın.",
+    text: "Aspava adını bu duanın baş harflerinden alır. Her sofra aynı dilekle kurulur.",
   },
   {
     letter: "S",
@@ -57,8 +57,15 @@ const columns: Column[] = [
   },
 ];
 
-// Sütunların dikey ritmi (masaüstü)
-const offsets = ["lg:mt-0", "lg:mt-24", "lg:mt-6", "lg:mt-32", "lg:mt-12", "lg:mt-40"];
+// Sütunların dikey ritmi: mobilde 2, tablette 3, masaüstünde 6 sütun
+const offsets = [
+  "mt-0 sm:mt-0 lg:mt-0",
+  "mt-14 sm:mt-16 lg:mt-24",
+  "mt-0 sm:mt-0 lg:mt-6",
+  "mt-14 sm:mt-0 lg:mt-32",
+  "mt-0 sm:mt-16 lg:mt-12",
+  "mt-14 sm:mt-0 lg:mt-40",
+];
 
 export function SofraStory() {
   const cities = branches.map((b) => b.city);
@@ -90,40 +97,37 @@ export function SofraStory() {
           </p>
         </div>
 
-        <div className="no-scrollbar -mx-[clamp(1rem,4.2vw,3.75rem)] mt-14 flex snap-x snap-mandatory gap-4 overflow-x-auto px-[clamp(1rem,4.2vw,3.75rem)] pb-4 lg:mx-0 lg:mt-20 lg:grid lg:grid-cols-6 lg:gap-5 lg:overflow-visible lg:px-0 lg:pb-0">
+        <div className="mt-14 grid grid-cols-2 gap-x-3 sm:grid-cols-3 sm:gap-x-5 lg:mt-20 lg:grid-cols-6">
           {columns.map((c, i) => (
-            <article
-              key={c.word}
-              className={`w-[68vw] shrink-0 snap-start sm:w-[42vw] lg:w-auto ${offsets[i]}`}
-            >
+            <article key={c.word} className={`min-w-0 ${offsets[i]}`}>
               <p
                 aria-hidden="true"
                 data-reveal="letter"
                 data-delay={i * 0.06}
-                className="type-display text-center text-[clamp(7rem,11.5vw,12.5rem)] leading-[0.78] text-brand"
+                className="type-display text-center text-[clamp(5rem,11.5vw,12.5rem)] leading-[0.78] text-brand"
               >
                 {c.letter}
               </p>
-              <p className="type-eyebrow mt-4 text-center text-ink">{c.word}</p>
+              <p className="type-eyebrow mt-3 text-center text-[0.6875rem] text-ink sm:mt-4 sm:text-xs">{c.word}</p>
 
               {c.photo ? (
                 <figure className="mt-6">
                   <div data-reveal="arch" className="aspect-[3/4] overflow-hidden rounded-t-full bg-stone">
                     <Picture
                       id={c.photo}
-                      sizes="(min-width: 1024px) 16vw, 68vw"
+                      sizes="(min-width: 1024px) 16vw, (min-width: 640px) 32vw, 48vw"
                       className="block h-full w-full"
                       imgClassName="h-full w-full object-cover"
                     />
                   </div>
-                  <figcaption className="mt-4 text-[0.9375rem] leading-relaxed text-ink/75">
+                  <figcaption className="mt-3 text-[0.8125rem] leading-relaxed text-ink/75 sm:mt-4 sm:text-[0.9375rem]">
                     <span className="font-semibold text-ink">{c.title}.</span> {c.text}
                   </figcaption>
                 </figure>
               ) : (
-                <div className="mt-6 flex aspect-[3/4] flex-col justify-between rounded-t-full bg-brand px-5 pt-[38%] pb-6 text-white">
-                  <p className="type-serif text-center text-[1.75rem] leading-none">A·S·P·A·V·A</p>
-                  <p className="text-[0.9375rem] leading-relaxed text-white/90">{c.text}</p>
+                <div className="mt-6 flex aspect-[3/4] flex-col justify-between gap-4 rounded-t-full bg-brand px-4 pt-[34%] pb-5 text-white sm:px-5 sm:pb-6">
+                  <p className="type-serif text-center text-[1.4rem] leading-none sm:text-[1.75rem]">A·S·P·A·V·A</p>
+                  <p className="text-[0.8125rem] leading-relaxed text-white/90 sm:text-[0.9375rem]">{c.text}</p>
                 </div>
               )}
             </article>
