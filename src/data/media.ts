@@ -1,3 +1,5 @@
+import { asset } from "@/lib/asset";
+
 // Tüm görseller Başkent Aspava'nın kendi tanıtım filminden (Instagram) alınmış karelerdir.
 // Her kare 720×1104 boyutundadır; filmin altındaki logo/yazı bandı kırpılmıştır.
 // Dosyalar /public/media altında 480 ve 720 piksel genişlikte AVIF + WebP olarak bulunur.
@@ -40,8 +42,8 @@ export const MEDIA_WIDTH = 720;
 export const MEDIA_HEIGHT = 1104;
 
 export const heroVideo = {
-  src: "/media/baskent-aspava-tanitim.mp4",
-  poster: "/media/poster.jpg",
+  src: asset("/media/baskent-aspava-tanitim.mp4"),
+  poster: asset("/media/poster.jpg"),
   // Filmdeki sahne geçişleri (saniye) — ekrandaki altyazı bu sürelere göre değişir
   scenes: [
     { at: 0, label: "Aspava Special" },

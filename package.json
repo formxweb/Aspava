@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:pages": "NEXT_PUBLIC_BASE_PATH=/Aspava NEXT_PUBLIC_SITE_URL=https://formxweb.github.io/Aspava next build && touch out/.nojekyll"
   },
   "dependencies": {
     "gsap": "^3.15.0",

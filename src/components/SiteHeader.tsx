@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { branches } from "@/data/branches";
 import { sections, site } from "@/data/site";
 import { ArrowRight, InstagramIcon } from "./icons";
+import { asset } from "@/lib/asset";
 
 export function SiteHeader() {
   const [onHero, setOnHero] = useState(true);
@@ -93,9 +94,9 @@ export function SiteHeader() {
       <div className="px-gutter mx-auto flex h-16 max-w-[1600px] items-center justify-between gap-6">
         <a href="#top" className="group flex items-center gap-3" aria-label="Başkent Aspava, sayfa başı">
           <picture>
-            <source srcSet="/brand/baskent-aspava-logo.webp" type="image/webp" />
+            <source srcSet={asset("/brand/baskent-aspava-logo.webp")} type="image/webp" />
             <img
-              src="/brand/baskent-aspava-logo.png"
+              src={asset("/brand/baskent-aspava-logo.png")}
               alt=""
               width={44}
               height={44}

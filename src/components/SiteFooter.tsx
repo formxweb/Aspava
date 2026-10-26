@@ -1,6 +1,7 @@
 import { branches } from "@/data/branches";
 import { sections, site } from "@/data/site";
 import { ArrowUpRight, InstagramIcon } from "./icons";
+import { asset } from "@/lib/asset";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -17,9 +18,9 @@ export function SiteFooter() {
         <div className="mt-16 grid gap-12 border-t border-white/30 pt-12 sm:grid-cols-2 lg:mt-24 lg:grid-cols-12 lg:gap-x-8">
           <div className="flex items-start gap-4 lg:col-span-4">
             <picture className="shrink-0">
-              <source srcSet="/brand/baskent-aspava-logo.webp" type="image/webp" />
+              <source srcSet={asset("/brand/baskent-aspava-logo.webp")} type="image/webp" />
               <img
-                src="/brand/baskent-aspava-logo.png"
+                src={asset("/brand/baskent-aspava-logo.png")}
                 alt="Başkent Aspava logosu"
                 width={88}
                 height={88}

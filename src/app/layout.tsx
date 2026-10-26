@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo, Instrument_Serif } from "next/font/google";
+import { heroVideo } from "@/data/media";
 import { site } from "@/data/site";
+import { isPreviewBuild } from "@/lib/asset";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -37,23 +39,23 @@ export const metadata: Metadata = {
     "lahmacun",
     "patlıcanlı kebap",
   ],
-  alternates: { canonical: "/" },
+  alternates: { canonical: site.url },
   openGraph: {
     type: "website",
     locale: "tr_TR",
-    url: "/",
+    url: site.url,
     siteName: site.legalName,
     title: `${site.name} — ${site.slogan}`,
     description: site.description,
-    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Başkent Aspava: et döner, karışık kebap ve lahmacun" }],
+    images: [{ url: `${site.url}/og.jpg`, width: 1200, height: 630, alt: "Başkent Aspava: et döner, karışık kebap ve lahmacun" }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name} — ${site.slogan}`,
     description: site.description,
-    images: ["/og.jpg"],
+    images: [`${site.url}/og.jpg`],
   },
-  robots: { index: true, follow: true },
+  robots: isPreviewBuild ? { index: false, follow: false } : { index: true, follow: true },
 };
 
 export const viewport: Viewport = {
@@ -66,7 +68,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="tr" className={`${archivo.variable} ${instrumentSerif.variable}`}>
       <head>
-        <link rel="preload" as="image" href="/media/poster.jpg" fetchPriority="high" />
+        <link rel="preload" as="image" href={heroVideo.poster} fetchPriority="high" />
       </head>
       <body>
         <a

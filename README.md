@@ -13,6 +13,15 @@ npm run build    # statik çıktı: out/
 npm run lint
 ```
 
+## GitHub Pages önizlemesi
+
+Önizleme adresi: **https://formxweb.github.io/Aspava/**
+
+Güncellemek için `scripts/deploy-pages.sh` çalıştırın. Betik siteyi `/Aspava` alt dizinine göre
+derler (`npm run build:pages`) ve `out/` klasörünü `gh-pages` dalına gönderir.
+Önizleme derlemesi arama motorlarına kapalıdır (`noindex`, `robots.txt` → `Disallow: /`).
+Asıl alan adına (baskentaspava.com.tr) çıkarken normal `npm run build` kullanın.
+
 ## Bölümler
 
 | Bölüm | Bileşen | Not |

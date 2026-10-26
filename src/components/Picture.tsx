@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import { media, MEDIA_HEIGHT, MEDIA_WIDTH, type MediaId } from "@/data/media";
+import { asset } from "@/lib/asset";
 
 type Props = {
   id: MediaId;
@@ -12,7 +13,7 @@ type Props = {
 };
 
 const srcSet = (id: MediaId, ext: "avif" | "webp") =>
-  `/media/${id}-480.${ext} 480w, /media/${id}-720.${ext} 720w`;
+  `${asset(`/media/${id}-480.${ext}`)} 480w, ${asset(`/media/${id}-720.${ext}`)} 720w`;
 
 // Statik çıktı için görseller önceden AVIF/WebP olarak üretilir; tarayıcı uygun boyutu seçer.
 export function Picture({ id, sizes, className, imgClassName, imgStyle, priority, alt }: Props) {
@@ -21,7 +22,7 @@ export function Picture({ id, sizes, className, imgClassName, imgStyle, priority
       <source type="image/avif" srcSet={srcSet(id, "avif")} sizes={sizes} />
       <source type="image/webp" srcSet={srcSet(id, "webp")} sizes={sizes} />
       <img
-        src={`/media/${id}-720.webp`}
+        src={asset(`/media/${id}-720.webp`)}
         width={MEDIA_WIDTH}
         height={MEDIA_HEIGHT}
         alt={alt ?? media[id].alt}

@@ -2,7 +2,8 @@ export const site = {
   name: "Başkent Aspava",
   legalName: "Başkent Aspava Restaurant",
   slogan: "Lezzetin Başkenti.",
-  url: "https://baskentaspava.com.tr",
+  // Önizleme derlemesinde (GitHub Pages) yayın adresiyle değiştirilir
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://baskentaspava.com.tr",
   description:
     "Başkent Aspava; Samsun, Amasya, Tokat ve İstanbul Ataşehir şubeleriyle ocakbaşı kebapları, et döner ve fırından lahmacunu Aspava sofrası geleneğiyle buluşturur.",
   // Instagram biyografisindeki "Tüm Bilgiler" bağlantısı
