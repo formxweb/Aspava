@@ -1,21 +1,37 @@
 import { branches } from "@/data/branches";
 import { sections, site } from "@/data/site";
-import { ArrowUpRight, InstagramIcon } from "./icons";
 import { asset } from "@/lib/asset";
+import { ArrowUpRight, InstagramIcon } from "./icons";
+import { RingText } from "./RingText";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer data-surface="brand" className="relative z-10 overflow-hidden bg-brand text-white">
+    <footer data-surface="dark" className="relative z-10 overflow-hidden bg-ink text-white">
       <div className="px-gutter mx-auto max-w-[1600px] pt-20 pb-10 lg:pt-28">
-        <p className="type-serif text-[clamp(3.5rem,11.5vw,11rem)] leading-[0.92]">
-          Lezzetin
-          <br />
-          Başkenti<span className="text-ink">.</span>
-        </p>
+        <div className="flex items-end justify-between gap-8">
+          <p className="type-serif text-[clamp(3.5rem,11.5vw,11rem)] leading-[0.92]">
+            Lezzetin
+            <br />
+            Başkenti<span className="text-brand">.</span>
+          </p>
+          <div aria-hidden="true" className="relative hidden size-[clamp(9rem,15vw,13rem)] shrink-0 md:block">
+            <RingText
+              text="LEZZETİN BAŞKENTİ • İSTANBUL • SAMSUN • AMASYA • TOKAT • "
+              radius={44}
+              fontSize={6.2}
+              className="ring-spin absolute inset-0 h-full w-full text-white/80 [--spin:40s]"
+              textClassName="type-ring"
+            />
+            <picture className="absolute inset-[24%]">
+              <source srcSet={asset("/brand/baskent-aspava-logo.webp")} type="image/webp" />
+              <img src={asset("/brand/baskent-aspava-logo.png")} alt="" width={120} height={120} loading="lazy" className="h-full w-full" />
+            </picture>
+          </div>
+        </div>
 
-        <div className="mt-16 grid gap-12 border-t border-white/30 pt-12 sm:grid-cols-2 lg:mt-24 lg:grid-cols-12 lg:gap-x-8">
+        <div className="mt-16 grid gap-12 border-t border-white/15 pt-12 sm:grid-cols-2 lg:mt-24 lg:grid-cols-12 lg:gap-x-8">
           <div className="flex items-start gap-4 lg:col-span-4">
             <picture className="shrink-0">
               <source srcSet={asset("/brand/baskent-aspava-logo.webp")} type="image/webp" />
@@ -25,7 +41,7 @@ export function SiteFooter() {
                 width={88}
                 height={88}
                 loading="lazy"
-                className="size-20 rounded-full ring-2 ring-white/90"
+                className="size-20 rounded-full ring-2 ring-white/20"
               />
             </picture>
             <div>
@@ -102,7 +118,7 @@ export function SiteFooter() {
           </nav>
         </div>
 
-        <div className="mt-16 flex flex-col gap-3 border-t border-white/30 pt-6 text-[0.8125rem] text-white/80 sm:flex-row sm:justify-between">
+        <div className="mt-16 flex flex-col gap-3 border-t border-white/15 pt-6 text-[0.8125rem] text-white/80 sm:flex-row sm:justify-between">
           <p className="type-eyebrow text-[0.625rem] tracking-[0.28em]">
             Allah Sağlık, Para, Afiyet Versin, Amin
           </p>

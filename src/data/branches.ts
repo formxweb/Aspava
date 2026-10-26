@@ -16,6 +16,9 @@ export type Branch = {
   hours: Checked<string>;
   // Harita ve yol tarifinde kullanılan arama ifadesi
   mapQuery: string;
+  // Şubeler haritasındaki yaklaşık konum ve etiketin yönü
+  coords: { lat: number; lon: number };
+  label: "left" | "right" | "above" | "below";
   photo?: { media: MediaId; caption: string; check?: string };
   order?: Checked<string>;
 };
@@ -35,6 +38,8 @@ export const branches: Branch[] = [
       check: "İşletmenin iletişim sayfasından alındı; güncelliği doğrulanmalı.",
     },
     mapQuery: "Başkent Aspava, Denizevleri Mahallesi Alaçam Caddesi No:6/A, Atakum, Samsun",
+    coords: { lat: 41.33, lon: 36.27 },
+    label: "above",
     photo: {
       media: "salon-servis",
       caption: "Salon",
@@ -60,6 +65,8 @@ export const branches: Branch[] = [
       check: "Kaynaklar farklı saat veriyor (10:00 – 23:30); doğrulanmalı.",
     },
     mapQuery: "Başkent Aspava, Hacılar Meydanı Mahallesi Necip Fazıl Caddesi No:7/C, Amasya",
+    coords: { lat: 40.65, lon: 35.83 },
+    label: "left",
     order: {
       value: "https://www.yemeksepeti.com/restaurant/jrgf/baskent-aspava",
       check: "Arama sonuçlarından bulundu; linkler sayfasıyla karşılaştırılmalı.",
@@ -79,6 +86,8 @@ export const branches: Branch[] = [
       check: "İşletmenin iletişim sayfasından alındı; güncelliği doğrulanmalı.",
     },
     mapQuery: "Başkent Aspava, Yeşilırmak Mahallesi Vali Zekai Gümüşdiş Bulvarı No:9/C, Tokat",
+    coords: { lat: 40.31, lon: 36.55 },
+    label: "below",
     order: {
       value: "https://www.yemeksepeti.com/restaurant/ec6p/baskent-aspava-ec6p",
       check: "Arama sonuçlarından bulundu; linkler sayfasıyla karşılaştırılmalı.",
@@ -101,6 +110,8 @@ export const branches: Branch[] = [
       check: "Şube sayfasından alındı; güncelliği doğrulanmalı.",
     },
     mapQuery: "Başkent Aspava Ataşehir, Küçükbakkalköy Mahallesi Attila İlhan Caddesi No:44, Ataşehir, İstanbul",
+    coords: { lat: 40.98, lon: 29.12 },
+    label: "above",
   },
 ];
 

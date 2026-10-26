@@ -1,6 +1,6 @@
 import { Branches } from "@/components/Branches";
 import { Hero } from "@/components/Hero";
-import { MenuExplorer } from "@/components/MenuExplorer";
+import { MenuSini } from "@/components/MenuSini";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SofraStory } from "@/components/SofraStory";
@@ -37,10 +37,10 @@ export default function Home() {
     <>
       <SiteHeader />
       <main id="icerik">
-        {/* Menü bölümü, yapışkan açılış filminin üzerine perde gibi kayar */}
+        {/* Menü bölümü, yapışkan açılış filminin üzerine kavisli bir sini kenarı gibi yükselir */}
         <div className="relative">
           <Hero />
-          <MenuExplorer />
+          <MenuSini />
         </div>
         <SofraStory />
         <Branches />

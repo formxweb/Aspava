@@ -24,14 +24,16 @@ Asıl alan adına (baskentaspava.com.tr) çıkarken normal `npm run build` kulla
 
 ## Bölümler
 
+Tasarımın ortak dili **sini / mühür**: logodaki şehir halkası ve Aspava'nın yuvarlak sofrası.
+
 | Bölüm | Bileşen | Not |
 | --- | --- | --- |
 | Navigasyon | `src/components/SiteHeader.tsx` | Video üzerinde şeffaf, sonra düz zemin; mobilde tam ekran menü |
-| Açılış | `src/components/Hero.tsx` | Tanıtım filmi arka planda; sahne altyazısı, durdur/ses düğmeleri |
-| Menü | `src/components/MenuExplorer.tsx` | Kategori geçişi, büyük sahne görseli, perde geçişi, kaydırma (swipe) |
-| Aspava Sofrası | `src/components/SofraStory.tsx` | ASPAVA duası, ateş / fırın / sofra hikâyesi |
-| Şubeler | `src/components/Branches.tsx` | Şehir seçimi, fotoğraf/harita, adres, telefon, yol tarifi, sipariş |
-| Alt bilgi | `src/components/SiteFooter.tsx` | Şube telefonları ve bağlantılar |
+| Açılış | `src/components/Hero.tsx` | Tanıtım filmi arka planda; logodaki halka kampanya ölçeğinde döner, ilerleme halkalı film kontrolleri |
+| Menü | `src/components/MenuSini.tsx` | Döner sini: ortada büyük tabak, çevrede yemekler, halkada menünün tamamı; bölüm kavisli kenarla yükselir |
+| Aspava Sofrası | `src/components/SofraStory.tsx` | A·S·P·A·V·A: duanın her kelimesi bir sütun, kemerli fotoğraflar |
+| Şubeler | `src/components/Branches.tsx` | Gerçek enlem/boylama göre şehir haritası, şube kartı, yol tarifi |
+| Alt bilgi | `src/components/SiteFooter.tsx` | Dönen mühür, şube telefonları ve bağlantılar |
 
 ## İçerik nereden düzenlenir?
 

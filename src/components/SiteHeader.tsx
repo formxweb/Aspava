@@ -152,7 +152,7 @@ export function SiteHeader() {
           </a>
           <a
             href="#subeler"
-            className="hidden h-11 items-center gap-2 bg-brand px-5 text-[0.875rem] font-semibold text-white transition-colors hover:bg-brand-deep sm:flex"
+            className="hidden h-11 items-center gap-2 rounded-full bg-brand px-5 text-[0.875rem] font-semibold text-white transition-colors hover:bg-brand-deep sm:flex"
           >
             Yol Tarifi
             <ArrowRight size={16} />
