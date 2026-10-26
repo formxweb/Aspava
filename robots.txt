@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /
+
+Sitemap: https://formxweb.github.io/Aspava/sitemap.xml

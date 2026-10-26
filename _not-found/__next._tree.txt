@@ -1,0 +1,5 @@
+:HL["/Aspava/_next/static/chunks/0qf2x0wmu4i4o.css","style"]
+:HL["/Aspava/media/poster.jpg","image",{"fetchPriority":"high"}]
+2:[["children",{"s":"__PAGE__","h":160}]]
+1:[["children",{"s":"/_not-found","h":96,"c":"$Q2"}]]
+0:{"b":"n0iWgkObRJB-Q8uuPY7eh","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
