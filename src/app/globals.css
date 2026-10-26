@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+/* Marka renkleri logodan örneklenmiştir: kırmızı daire, siyah halka, beyaz silüet. */
+@theme {
+  --color-brand: #d91111;
+  --color-brand-deep: #a80c0c;
+  --color-ink: #141414;
+  --color-paper: #f5f1eb;
+  --color-stone: #e9e4dc;
+  --color-check: #8a5a00;
+  --color-check-bg: #fff3d1;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+@theme inline {
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument), ui-serif, Georgia, serif;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: var(--color-brand);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 3px;
+  }
+
+  [data-surface="dark"] :focus-visible,
+  [data-surface="brand"] :focus-visible {
+    outline-color: #fff;
+  }
+
+  [id] {
+    scroll-margin-top: 4rem;
+  }
+}
+
+/* Yatay kenar boşluğu — tüm bölümlerde aynı ritim */
+@utility px-gutter {
+  padding-inline: clamp(1rem, 4.2vw, 3.75rem);
+}
+
+/* Logodaki kalın, dar harf karakterine yakın başlık kesimi */
+@utility type-display {
+  font-family: var(--font-sans);
+  font-stretch: 70%;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.86;
+  letter-spacing: -0.012em;
+}
+
+@utility type-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+@utility type-serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* Hero giriş animasyonu: JS beklemeden ilk karede çalışır */
+@keyframes line-rise {
+  from {
+    transform: translate3d(0, 108%, 0);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes soft-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.04em;
+}
+
+.hero-line > span {
+  display: block;
+  animation: line-rise 1.15s var(--ease-out-expo) both;
+  animation-delay: var(--d, 0s);
+}
+
+.hero-fade {
+  animation: soft-rise 0.9s var(--ease-out-expo) both;
+  animation-delay: var(--d, 0s);
+}
+
+/* Hero video ilerleme çizgisi */
+.progress-bar {
+  transform-origin: left center;
+  transform: scaleX(var(--p, 0));
+}
+
+/* Animasyonlu alt çizgi */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.5s var(--ease-out-expo);
+}
+
+.link-underline:hover {
+  background-size: 0% 1px;
+  background-position: 100% 100%;
+}
+
+/* Doğrulanması gereken bilgiler için geçici işaret */
+.check-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.3em 0.55em;
+  border: 1px dashed currentColor;
+  border-radius: 2px;
+  background: var(--color-check-bg);
+  color: var(--color-check);
+  font: 600 0.625rem/1.1 var(--font-sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: help;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    transition-duration: 0.01ms !important;
+  }
+}
